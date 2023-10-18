@@ -42,7 +42,7 @@ async def chat_completion(messages: list[dict], stream: bool = False,
     
     # get search documents for the last user message in the conversation
     user_message = messages[-1]["content"]
-    documents = await get_documents(user_message, context.get("num_retrieved_docs", 5))    
+    documents = await get_documents(user_message, context.get("num_retrieved_docs", 2))    
     
     # make a copy of the context and modify it with the retrieved documents
     context = dict(context)

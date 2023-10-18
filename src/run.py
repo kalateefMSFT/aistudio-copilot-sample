@@ -5,6 +5,9 @@ from __future__ import annotations
 from dotenv import load_dotenv
 load_dotenv()
 
+from set_current_environment import set_all
+set_all()
+
 import os
 import asyncio
 import platform
@@ -83,7 +86,7 @@ def run_evaluation(chat_completion_fn, name, dataset_path):
         asset=qna_fn,
         data=dataset,
         task_type="qa",
-        prediction_data="answer",
+        # prediction_data="answer",
         truth_data="truth",
         metrics_config={
             "openai_params": {
@@ -95,6 +98,8 @@ def run_evaluation(chat_completion_fn, name, dataset_path):
             },
             "questions": "question",
             "contexts": "context",
+            "y_pred": "answer",
+            "y_test": "answer"
         },
         tracking_uri=client.tracking_uri,
     )

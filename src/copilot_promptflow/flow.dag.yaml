@@ -29,7 +29,7 @@ nodes:
     tool: promptflow.tools.embedding.embedding
   inputs:
     connection: Default_AzureOpenAI
-    deployment_name: text-embedding-ada-002-2
+    deployment_name: ada
     input: ${inputs.question}
 - name: retrieve_documentation
   type: python

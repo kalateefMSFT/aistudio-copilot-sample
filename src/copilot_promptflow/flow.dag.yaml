@@ -37,7 +37,7 @@ nodes:
     type: code
     path: retrieve_documentation.py
   inputs:
-    search: AzureAISearch
+    search: karriem-search
     question: ${inputs.question}
     index_name: product-info
     embedding: ${question_embedding.output}
